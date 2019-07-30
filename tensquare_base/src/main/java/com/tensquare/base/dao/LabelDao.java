@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface LabelDao extends JpaRepository<Label, String>, JpaSpecificationExecutor<Label> {
+public interface LabelDao extends
+        JpaRepository<Label, String>, JpaSpecificationExecutor<Label> {
 }

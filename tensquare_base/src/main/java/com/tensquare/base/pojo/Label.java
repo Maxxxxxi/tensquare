@@ -16,6 +16,8 @@ public class Label implements Serializable {
     private Long fans;
     private String recommend;
 
+
+
     public String getId() {
         return id;
     }

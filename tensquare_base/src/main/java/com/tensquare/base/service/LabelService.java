@@ -46,7 +46,6 @@ public class LabelService {
     }
 
     public void deleteById(String id){
-
         labelDao.deleteById(id);
     }
 
@@ -59,13 +58,11 @@ public class LabelService {
              * query:封装的是查询关键字，比如group by order by
              * cb:用来封装条件对象，直接返回null，说明没有条件
              */
-
             public Predicate toPredicate(Root<Label> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 if(label.getLabelname() !=null && !"".equals(label.getLabelname())) {
                     Predicate predicate = cb.like(root.get("labelname").as(String.class), "%" + label.getLabelname() + "%");//where labelname like %+labelname+%
                     list.add(predicate);
                 }
-
                 if(label.getState() !=null && !"".equals(label.getState())) {
                     Predicate predicate = cb.equal(root.get("state").as(String.class), label.getState());//where state = "1"
                     list.add(predicate);
@@ -88,20 +85,17 @@ public class LabelService {
              * query:封装的是查询关键字，比如group by order by
              * cb:用来封装条件对象，直接返回null，说明没有条件
              */
-
             public Predicate toPredicate(Root<Label> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 if(label.getLabelname() !=null && !"".equals(label.getLabelname())) {
                     Predicate predicate = cb.like(root.get("labelname").as(String.class), "%" + label.getLabelname() + "%");//where labelname like %+labelname+%
                     list.add(predicate);
                 }
-
                 if(label.getState() !=null && !"".equals(label.getState())) {
                     Predicate predicate = cb.equal(root.get("state").as(String.class), label.getState());//where state = "1"
                     list.add(predicate);
                 }
                 Predicate[] pres = new Predicate[list.size()];
                 pres = list.toArray(pres);
-
                 return cb.and(pres);
             }
         },pageable);

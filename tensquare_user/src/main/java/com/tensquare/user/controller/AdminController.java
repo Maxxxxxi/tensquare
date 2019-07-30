@@ -29,6 +29,19 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
+
+
+	//登录模块
+	@RequestMapping(value = "/login",method = RequestMethod.POST)
+	public Result login(@RequestBody Admin admin){
+		Admin loginAdmin = adminService.login(admin);
+		if(loginAdmin == null){
+			return new Result(false,StatusCode.LOGINERROR,"登录失败");
+		}
+		//使得前后端可以通话的操作，采用JWT实现
+
+		return new Result(true,StatusCode.OK,"登录成功");
+	}
 	
 	
 	/**

@@ -43,6 +43,16 @@ public class UserController {
 		return new Result(true,StatusCode.OK,"发送成功");
 	}
 
+	//用户登录
+	@RequestMapping(value = "/login",method = RequestMethod.POST)
+	public Result login(@RequestBody User user){
+		user = userService.login(user.getMobile(),user.getPassword());
+		if(user == null){
+			return new Result(false,StatusCode.LOGINERROR,"登录失败");
+		}
+		return new Result(true,StatusCode.OK,"登录成功");
+	}
+
 	//注册用户
     @RequestMapping(value = "register/{code}",method = RequestMethod.POST)
     public Result regist(@PathVariable String code,@RequestBody User user){

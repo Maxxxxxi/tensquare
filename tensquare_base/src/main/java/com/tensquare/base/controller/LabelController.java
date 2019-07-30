@@ -23,13 +23,15 @@ public class LabelController {
     @RequestMapping(method = RequestMethod.GET)
     public Result findAll(){
     //    int i=1/0;
-        return new Result(true, StatusCode.OK,"查询成功",labelService.findAll());
+        return new Result(true, StatusCode.OK,"查询成功",
+                labelService.findAll());
     }
 
     @RequestMapping(value = "/{labelId}",method = RequestMethod.GET)
     public Result findById(@PathVariable("labelId") String labelId){
 
-        return new Result(true, StatusCode.OK,"查询成功",labelService.findById(labelId));
+        return new Result(true, StatusCode.OK,"查询成功",
+                labelService.findById(labelId));
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -58,10 +60,11 @@ public class LabelController {
     }
 
     @RequestMapping(value = "/search/{page}/{size}")
-    public Result pageQuery(@RequestBody Label label,@PathVariable int page,@PathVariable int size){
-
+    public Result pageQuery(@RequestBody Label label,@PathVariable int page,
+                            @PathVariable int size){
         Page<Label> pageData = labelService.pageQuery(label,page,size);
-        return new Result(true,StatusCode.OK,"查询成功",new PageResult<Label>(pageData.getTotalElements(),pageData.getContent()));
+        return new Result(true,StatusCode.OK,"查询成功",
+                new PageResult<Label>(pageData.getTotalElements(),pageData.getContent()));
     }
 
 }
