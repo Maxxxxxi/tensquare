@@ -5,9 +5,13 @@ spring:
     name: tensquare-qa #指定服务名
   datasource:  
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.216.129:3306/tensquare_qa?characterEncoding=UTF8
+    url: jdbc:mysql://192.168.216.133:3306/tensquare_qa?characterEncoding=UTF8
     username: root
     password: root
   jpa: 
     database: MySQL
     show-sql: true
+jwt:
+  config:
+    key: itcast
+

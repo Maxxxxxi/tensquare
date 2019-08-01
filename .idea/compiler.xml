@@ -11,9 +11,9 @@
         <module name="tensquare_base" />
         <module name="tensquare_qa" />
         <module name="tensquare_article" />
-        <module name="tensquare_spit" />
-        <module name="tensquare_recruit" />
         <module name="tensquare_user" />
+        <module name="tensquare_recruit" />
+        <module name="tensquare_spit" />
         <module name="tensquare_search" />
         <module name="tensquare_common" />
       </profile>
