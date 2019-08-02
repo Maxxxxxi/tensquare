@@ -6,16 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tensquare_eurake" />
         <module name="tensquare_rabbitmqtest" />
         <module name="tensquare_gathering" />
         <module name="tensquare_base" />
         <module name="tensquare_qa" />
         <module name="tensquare_article" />
-        <module name="tensquare_user" />
-        <module name="tensquare_recruit" />
         <module name="tensquare_spit" />
+        <module name="tensquare_recruit" />
+        <module name="tensquare_user" />
         <module name="tensquare_search" />
         <module name="tensquare_common" />
+        <module name="tensquare_eureka_1" />
       </profile>
     </annotationProcessing>
   </component>
@@ -24,6 +26,8 @@
       <module name="tensquare_article" options="-parameters" />
       <module name="tensquare_base" options="-parameters" />
       <module name="tensquare_common" options="-parameters" />
+      <module name="tensquare_eurake" options="-parameters" />
+      <module name="tensquare_eureka_1" options="-parameters" />
       <module name="tensquare_gathering" options="-parameters" />
       <module name="tensquare_qa" options="-parameters" />
       <module name="tensquare_rabbitmqtest" options="-parameters" />

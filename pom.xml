@@ -18,6 +18,8 @@
         <module>tensquare_spit</module>
         <module>tensquare_rabbitmqtest</module>
         <module>tensquare_user</module>
+        <module>tensquare_eurake</module>
+        <module>tensquare_eureka_1</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -87,5 +89,16 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.M9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

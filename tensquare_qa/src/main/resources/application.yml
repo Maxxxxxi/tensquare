@@ -14,4 +14,13 @@ spring:
 jwt:
   config:
     key: itcast
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+    instance:
+      prefre-ip-address: true
+ribbon:
+  eureka:
+    enabled: true
 
