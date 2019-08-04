@@ -41,6 +41,12 @@ public class UserController {
 	@Autowired
 	private JwtUtil jwtUtil;
 
+	@RequestMapping(value = "/{userid}/{friendid}/{x}",method = RequestMethod.PUT)
+	public void updatefanscountandfollowcount(@PathVariable String userid,@PathVariable String friendid,@PathVariable int x){
+		userService.updatefanscountandfollowcount(x,userid,friendid);
+
+	}
+
 
 
 	//发送短信验证码

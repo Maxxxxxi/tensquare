@@ -20,6 +20,7 @@
         <module>tensquare_user</module>
         <module>tensquare_eurake</module>
         <module>tensquare_eureka_1</module>
+        <module>tensquare_friend</module>
     </modules>
     <packaging>pom</packaging>
 
