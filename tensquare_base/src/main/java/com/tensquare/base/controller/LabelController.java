@@ -7,8 +7,10 @@ import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -20,9 +22,15 @@ public class LabelController {
     @Autowired
     private LabelService labelService;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @RequestMapping(method = RequestMethod.GET)
     public Result findAll(){
-    //    int i=1/0;
+    //    int i=1/
+        String header = request.getHeader("Authorization");
+        System.out.println(header);//若是通过网关访问的话，会丢失头信息，
+        //前端的过滤器和服务器端的过滤器要求的安全性而言，前端的稍微低一些。后台必须要管理员的身份，前端的不需要管理员身份，前端不需要验证
         return new Result(true, StatusCode.OK,"查询成功",
                 labelService.findAll());
     }
